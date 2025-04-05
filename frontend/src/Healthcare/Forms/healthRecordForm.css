@@ -1,0 +1,87 @@
+.healthRecordFormContainer {
+    max-width: 400px;
+    max-height: 600px;
+    margin: auto;
+    padding: 10px;
+    margin-top: -12px;
+    border-radius: 5px;
+    /* margin-top: 2px; */
+}
+
+.healthRecordFormContainer h2 {
+    margin-bottom: 0px;
+}
+
+.formGroup {
+    margin-bottom: 10px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="date"],
+.formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formGroup textarea {
+    height: 100px;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.addHealthrecordButton {
+    background-color: #3C78AA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 300px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.addHealthrecordButton:hover {
+    background-color: #86B6F6;
+    color: #000000;
+}
+
+.note{
+    resize: none;
+}
+
+Input.TextArea{
+    resize: none;
+}
+
+TextArea{
+    resize: none;
+}
+
+.updateButton{
+    background-color: #3C78AA;
+    margin-left: 380px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 37px;
+    margin-bottom: -10px;
+    
+}
+
+.updateButton:hover {
+    background-color: #86B6F6;
+    color: #000000;
+}

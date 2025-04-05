@@ -1,0 +1,96 @@
+.main-box {
+  width: 100% !important;
+  display: flex;
+  justify-content: center; 
+}
+
+
+  .Dashboard-cards {
+ 
+    
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+   
+  }
+
+  .pieChartTitle {
+    color: #3C78AA;
+    margin-left: 130px;
+    margin-top: 10px;
+  }
+
+  .pieChart {
+    width: 45%;
+    /* padding-top: 300px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+    height: 490px;
+    margin-right: 5px;
+    margin-left: 320px;
+    margin-top: 20px;
+    padding: 10px;
+  
+  }
+
+  .healthcareitem {
+    display: inline-block; 
+    margin: 10px;
+    height: 40px;
+    width: 270px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    padding: 22px;
+    border-radius: 5px;
+    background-color: #4682b4;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center; 
+    white-space: nowrap; 
+   
+    
+  }
+  
+  .healthcareitem:hover {
+    background-color: #1d405c;
+    cursor: pointer;
+  }
+    
+  .healthcare-heading {
+    margin-left: 335px;
+    margin-top: 15px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+.healthcare-header-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important; /* Increased spread */
+  text-align: center;
+  max-width: 1080px !important;
+  height: 100px;
+  
+  margin: 0px 0px 12px 10px !important; /* Ensure centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+ 
+}
+
+  .healthcare-heading {
+    font-size: 26px;
+    color: #3C78AA;
+    font-weight: bold;
+    margin: 0;
+  }

@@ -1,0 +1,87 @@
+
+.search-bar {
+  border: 1px solid #ccc;
+  height:37px ;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+.add{
+  background-color: #4682B4;
+  width: 40px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 80px;
+    padding: 5px;
+    border: none;
+}
+
+.approveButton{
+  
+  background-color: #4682B4;
+  width: 40px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 8px;
+    border: none;
+
+}
+
+.approveButton:hover{
+  background-color: #0056b3;
+}
+
+.cancelButton{
+  
+  background-color: #ff0000;
+  width: 40px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 15px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+  
+}
+
+.cancelButton:hover{
+  background-color: #da190b;
+  cursor: pointer;
+}
+
+.colour th {
+ 
+  padding: 12px;
+  text-align: left;
+  background-color: #3C78AA;
+  color: white;
+  font-weight: bold;
+  border: none;
+ 
+}
+.colour th:first-child {
+  border-top-left-radius: 10px; /* Rounded left corner */
+}
+
+.colour th:last-child {
+  border-top-right-radius: 10px; /* Rounded right corner */
+}
+
+.table-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 12px; /* Rounded corners */
+  overflow: hidden;
+  border: 1px solid #ddd; /* Light border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}

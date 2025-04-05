@@ -1,0 +1,35 @@
+  
+  .form1 label.Addjailor-lable {
+    margin-bottom: 5px;
+  }
+  
+  .form1 .addjailorinputs {
+    width:250px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form1 select.addjailorinputs {
+    width:250px;
+    height: 40px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form1 input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .radio-lable {
+    margin-left: 0;
+    margin-right: 10px;
+  }
+  
+  .error{
+    color: red;
+  }
+  

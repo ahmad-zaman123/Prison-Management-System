@@ -1,0 +1,267 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 290px;
+    margin-top: 20px;
+  
+  }
+  
+  .chart-card-gender {
+    width: 450px;
+    height: 460px;
+    padding: 10px;
+    margin-left: 20px;
+   
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+  }
+
+  .chart-card-status {
+    width: 450px;
+    height: 460px;
+    padding: 10px;
+
+ margin-left: 70px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+  }
+
+
+  .chart-card-inmates {
+    width: 41%;
+    padding: 20px;
+    margin-right: -175px;
+    margin-top: -155px;
+    height: 25%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+  }
+
+  .chart-card-inmates-title {
+    color: #89CFF0;
+    margin-left: 50px;
+  }
+
+  .chart-card-gender-title {
+    color: #3C78AA;
+    /* margin-left: 100px; */
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .chart-card-status-title {
+    color:#3C78AA;
+    /* margin-left: 155px; */
+    text-align: center;
+    margin-bottom: 0px !important;
+    
+
+  }
+
+  .allItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 250px;
+
+  
+  }
+
+  .items {
+    display: inline-block; 
+    margin: 20px;
+    height: 40px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+    padding: 22px;
+    border-radius: 5px;
+    background-color: #4682b4;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center; 
+    white-space: nowrap; 
+   
+    
+  }
+  
+  .items:hover {
+    background-color: #1d405c;
+    cursor: pointer;
+  }
+  
+  .total {
+    display: block; 
+    font-size: 32px;
+    font-weight: normal;
+    font-weight: bold;
+    margin-top: 5px; 
+    
+  }  
+  
+  .heading {
+    margin-left: 335px;
+    margin-top: 15px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+  .admindashboard-chart-card-inmates {
+    margin-left: 50px;
+    width: 41%;
+    padding: 20px;
+    height: 22%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .admindashboard-chart-card-status {
+    width: 40%;
+    height: 80%;
+    padding: 20px;
+  
+    margin-top: 100px;
+    margin-left: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0.3, 0.3, 0.3, 0.3);
+  }
+
+  .admindashboard-chart-card-inmates-title {
+    color: #89CFF0;
+    /* margin-left: 50px; */
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .admin-jailorCard {
+    margin-left: 50px;
+    width: 40%;
+    padding: 20px;
+    margin-top: 100px;
+    height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-jailorChart {
+    margin-left: 70px;
+    width: 350px  !important; /* Adjust width as needed */
+    height: 350px !important; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .admindashboard-bar-chart {
+    
+    width: 350px  !important; /* Adjust width as needed */
+    height: 290px !important; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px !important;
+   
+}
+.icon{
+  font-size: 20px !important;
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Adds space between icon and text */
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Adds space between icon and text */
+  font-size: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+
+  .admindashboard-bar-chart canvas{
+    height: 95% !important;
+    width: 95% !important;
+
+  }
+
+  .main-box {
+    width: 100% !important;
+    display: flex;
+    justify-content: center; 
+
+}
+
+.inmate-header-box {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important; /* Increased spread */
+  text-align: center;
+  max-width: 1080px !important;
+  height: 100px;
+  
+  margin: 0px 0px 20px 310px !important; /* Ensure centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+ 
+}
+
+
+
+  
+  
+  .inmate-heading {
+    font-size: 26px;
+    color: #3C78AA;
+    font-weight: bold;
+    margin: 0;
+  }
+  .barchart {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -18px;
+  }
+ 
+  .barchart canvas{
+     height: 80% !important;
+     width: 80% !important;
+  }
+
+
+ 

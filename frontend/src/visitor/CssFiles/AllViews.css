@@ -1,0 +1,109 @@
+.v-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 9999; /* Ensure it appears above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.v-sec-show {
+    display: flex;
+}
+
+.v-sec-hide {
+    display: none;
+}
+
+.v-modal-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 500px;
+}
+
+.v-close-icon {
+    position: absolute;
+    transition-duration: 150ms;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    cursor: pointer;
+    right:10px; /* Assuming the default font size of 1rem = 16px */
+    top: 10px; /* Assuming the default font size of 1rem = 16px */
+}
+
+.v-close-icon:hover {
+    transform: scale(1.1);
+}
+
+.v-staff-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.v-personal-info {
+    margin-bottom: 20px;
+    margin: 5px;
+}
+
+.v-personal-info h2 {
+    padding: 20px;
+    text-align: left;
+}
+
+.v-print-button {
+    background-color: #0e7490;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.v-print-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.v-staff-icon {
+    padding: 10px;
+}
+
+.v-personal-details {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.v-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.view {
+    padding: 12px;
+  }
+  
+  .text1 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 17px;
+    margin-left: 10px;
+  }

@@ -1,0 +1,81 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  width: 300px;
+  background-color: #4682B4;
+  padding: 20px;
+  padding-top: 40px; 
+}
+
+.topic {
+  font-size: 24px;
+  color: #ffffff;
+  padding: 5px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-right: -10px;
+  margin-left: 4px;
+}
+
+.divider {
+  border-top: 2px solid #ffffff;
+  margin: 10px 0;
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-left: 320px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 2;
+  display: flex;
+  background-color: #ffffff;
+}
+
+.mainMenu {
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+.subMenu {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.prison-logo {
+  width: 60px;
+  height: 80px;
+  margin-right: 0px;
+}
+
+.dashboard-header {
+  display: flex;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.menuItem {
+  color: whitesmoke !important;
+  transition: background 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: #1A3D5A !important; /* Dark blue hover */
+  color: white !important;
+}
+/* Style for the selected menu item */
+.ant-menu-item-selected {
+  background-color: #1A3D5A !important; /* Dark blue for selected item */
+  color: white !important;
+}

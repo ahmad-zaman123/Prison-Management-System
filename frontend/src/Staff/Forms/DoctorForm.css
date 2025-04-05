@@ -1,0 +1,46 @@
+/* DoctorForm.css */
+.form1 {
+    padding: 15px;
+}
+
+.form1 label.Addjailor-lable {
+    margin-bottom: 5px;
+  }
+
+  .form1 input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .radio-lable {
+    margin-left: 0;
+    margin-right: 10px;
+    height: 20px;
+  }
+
+
+.Doctor-submit-button {
+    padding: 5px 15px;
+  background-color:#3C78AA ;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 440px;
+}
+
+.Doctor-submit-button:hover {
+    background-color: #0056b3;
+}
+
+.form1 label.Addjailor-lable {
+    margin-bottom: 5px;
+  }
+  
+  .form1 .addjailorinputs {
+    width:250px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }

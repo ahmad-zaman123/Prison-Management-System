@@ -1,0 +1,40 @@
+/* AddjailorForm.css */
+
+/* Base styles */
+/* .form-Jailor {
+  margin-top: -50px;
+} */
+
+.form-container {
+  
+  padding: 15px;
+}
+
+
+.body {
+  margin-bottom: 10px;
+}
+
+.addjailor-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Addjailor-button-submit{
+  padding: 5px 15px;
+  background-color:#3C78AA ;
+  font-size: 17px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 440px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+

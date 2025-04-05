@@ -1,0 +1,330 @@
+
+.countContainer {
+  margin-left: 400px;
+  /* margin-top: 40px; */
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #3C78AA !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.searchInput {
+  border: 1px solid #ccc;
+  height:37px ;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  border-radius: 4px;
+  padding-left: 10px;
+  /* margin-right: 10px; */
+}
+
+
+.closeIcon {
+  position: absolute;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 100px;
+  margin-top: -28px;
+}
+
+/* Table styles */
+.inmates-Table {
+  width: 93%;
+  margin: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 12px;
+  /* Rounded corners */
+  overflow: hidden;
+  border: 1px solid #ddd;
+  /* Light border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
+  /* Adds shadow */
+}
+
+
+.inmates-Table th {
+
+  width: fit-content;
+  padding: 12px;
+  text-align: left;
+  background-color: #3C78AA !important;
+  color: white;
+  font-weight: bold;
+  border: none !important;
+}
+
+.inmates-Table td {
+
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+
+
+.inmatesTable th:first-child {
+  border-top-left-radius: 10px !important;
+  /* Rounded left corner */
+}
+
+.inmatesTable th:last-child {
+  border-top-right-radius: 10px !important;
+  /* Rounded right corner */
+}
+
+.addbutton {
+  margin-left: 40px;
+  margin-right: 30px;
+  /* margin-top: 20px; */
+  height: 40px;
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color: #3C78AA;
+  cursor: pointer;
+}
+
+
+.update-inmate-button {
+  width: 40px;
+  background-color: #4682B4;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 8px;
+  border: none;
+}
+
+.update-inmate-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-inmate-button {
+  width: 40px;
+  background-color: red;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 5px;
+  border: none;
+}
+
+.delete-inmate-button:hover {
+  background-color: #da190b;
+}
+
+.buttonColumn {
+  width: 8.8%;
+}
+
+
+
+.currentInmates {
+  text-align: center;
+  margin-top: 10px;
+  color: #89CFF0;
+  margin-left: 300px;
+  font-size: 25px;
+  font-family: sans-serif;
+}
+
+.profileTitle {
+  margin-top: 0px;
+  color: #89CFF0;
+  margin-right: 90px;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-left: 170px;
+}
+
+
+
+.profileContainer {
+  padding-bottom: 12px;
+  /* border: 1px solid #000000; */
+  border-radius: 8px;
+}
+
+.searchContainer {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 900px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+}
+
+
+
+.countNumber {
+  margin-top: 5px;
+}
+
+.image {
+  margin-left: 195px;
+  margin-bottom: 10px;
+  height: 250px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+.profile-item {
+  display: flex;
+}
+
+.profile-label {
+  font-weight: bold;
+  width: 205px;
+  color: #4682B4;
+  margin-left: 50px;
+}
+
+.profile-value {
+  margin-left: 5px;
+}
+
+.updateInmateProfile {
+  width: 100px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 8px;
+  
+  margin-top: 15px;
+  border: none;
+}
+
+
+
+.deleteInmateProfile {
+  width: 100px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 15px;
+  border: none;
+}
+
+.wantedProfile {
+  width: 160px;
+  background-color: #4682B4;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px;
+  margin-top: 5px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  border: none;
+}
+
+.wantedProfile:hover {
+  background-color: #3C78AA;
+}
+
+.releasedProfile {
+  width: 170px;
+  background-color: #4682B4;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 6px;
+  margin-bottom: 8px;
+  margin-top: 20px;
+  border: none;
+}
+
+.releasedProfile:hover {
+  background-color: #3C78AA
+}
+
+.updateInmateProfile:hover {
+  font-size: 16px;
+}
+
+.deleteInmateProfile:hover {
+  font-size: 16px;
+}
+
+
+.sentence {
+  margin-left: 340px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.subtopic1 {
+  margin-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.subtopic2 {
+  margin-left: 50px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.medicalAppointmentButton {
+  width: 230px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: 100px;
+  margin-top: 10px;
+  border: none;
+}
+
+.medicalHistoryTitle {
+  margin-top: 0px;
+  color: #89CFF0;
+  margin-right: 90px;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-left: 120px;
+}
+
+.histroryContainer {
+  /* border: 1px solid #000000; */
+  padding: 10px;
+  border-radius: 8px;
+}

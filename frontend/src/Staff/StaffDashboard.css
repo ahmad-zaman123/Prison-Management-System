@@ -1,0 +1,113 @@
+.staff-main {
+    display: flex;
+    margin-left: 300px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+.staff-main-function {
+    /* flex: 1; */
+    border: 1px solid #ccc;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #4683B4;
+}
+.staff-main-function:hover{
+    background-color: #1D405C;
+
+}
+/* Default styles */
+.Jailor-chart-set {
+    display: flex;
+    margin-left: 375px;
+    height: 450px;
+}
+
+.jailor-Card {
+    margin-top: 20px;
+    height: 460px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width for responsiveness */
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+}
+
+.jailor-Card2 {
+    margin-top: 20px;
+    height: 460px;
+    margin: 10px;
+    margin-left: 40px;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width for responsiveness */
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3); /* Box shadow */
+}
+
+
+
+
+.mainbox {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the child */
+    align-items: center;
+    
+  
+}
+
+.staff-header-box {
+    background-color: white; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 73%;  /* Set appropriate width */
+    max-width: 1200px; /* Prevent excessive stretching */
+    height: 100px;
+  
+    
+
+    /* Centering */
+    margin: 0px 350px 0px ;  /* Auto centers horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Ensures proper alignment */
+    
+}
+
+
+  
+  
+  .staff-heading {
+    font-size: 26px;
+    color: #3C78AA;
+    font-weight: bold;
+    margin: 0;
+  }
+  .jailorCard {
+    margin-top: 20px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* ✅ Set a fixed height */
+}
+
+.jailorCard canvas {
+    height: 95% !important; /* ✅ Ensure the chart fills the box */
+    width: 95% !important;
+}

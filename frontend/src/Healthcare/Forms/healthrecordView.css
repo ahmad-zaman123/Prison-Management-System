@@ -1,0 +1,30 @@
+
+
+.viewContainer{
+  margin: 10px;
+  margin-left: 40px;
+}
+
+.margin{
+  margin-bottom: 25px;
+}
+
+.downloadpdf{
+  border: 1px solid #ffffff;
+  width: 120px;
+  padding: 10px;
+  color: #000000;
+  background-color: #86B6F6;
+  font-weight: bold;
+}
+
+.downloadpdf:hover{
+  color: #000000;
+  background-color: #86B6F6;
+  cursor: pointer;
+}
+
+.label {
+  margin-left: 30px;
+  font-size: 18px;
+}

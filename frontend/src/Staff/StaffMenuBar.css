@@ -1,0 +1,14 @@
+.menuItem {
+  color: whitesmoke !important;
+  transition: background 0.3s ease;
+}
+
+.menuItem:hover {
+  background-color: #1A3D5A !important; /* Dark blue hover */
+  color: white !important;
+}
+/* Style for the selected menu item */
+.ant-menu-item-selected {
+  background-color: #1A3D5A !important; /* Dark blue for selected item */
+  color: white !important;
+}

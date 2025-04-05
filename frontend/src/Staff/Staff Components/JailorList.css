@@ -1,0 +1,162 @@
+.all-jailor {
+  margin-top: 70px;
+}
+
+.header {
+  text-align: left;
+  width: 93%;
+  margin: 40px;
+  padding: 22px;
+  /* p-4 */
+  background-color: white;
+  /* bg-white */
+  border-radius: 0.375rem;
+  /* rounded */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* shadow-md */
+}
+
+.searchBar {
+  border: 1px solid #ccc;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 40px;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+
+.add-button {
+  margin-right: 25px;
+  margin-top: 20px;
+  height: 40px;
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background-color:  #3C78AA;
+  cursor: pointer;
+}
+
+
+.all-jailor button {
+  margin-right: 10px;
+}
+
+.all-jailor table {
+  /* margin-top: 20px; */
+  margin: 40px;
+  width: 93%;
+  border-collapse: collapse;
+}
+
+.all-jailor th,
+.all-jailor td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.AllJailor-h1 {
+  margin-left: 800px;
+  margin-top: 30px;
+}
+
+.all-jailor th {
+  background-color: #f2f2f2;
+}
+
+.update-jailor-button,
+.delete-jailor-button {
+  /* padding: 5px 10px; */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.update-jailor-button {
+  width: 40px;
+  background-color: #4682B4;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 4px;
+  margin-left: 5px;
+  border: none;
+}
+
+.update-jailor-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-jailor-button {
+  width: 40px;
+  background-color: red;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px;
+  margin-left: 5px;
+  border: none;
+}
+
+.delete-jailor-button:hover {
+  background-color: #da190b;
+}
+
+.addDoctorModal {
+  height: 800px;
+}
+
+.colour th {
+
+  padding: 12px;
+  text-align: left;
+  background-color: #3C78AA;
+  color: white;
+  font-weight: bold;
+  border: none;
+
+}
+
+.colour th:first-child {
+  border-top-left-radius: 10px;
+  /* Rounded left corner */
+}
+
+.colour th:last-child {
+  border-top-right-radius: 10px;
+  /* Rounded right corner */
+}
+
+.table-container {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 12px;
+  /* Rounded corners */
+  overflow: hidden;
+  border: 1px solid #ddd;
+  /* Light border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* Adds shadow */
+}
+
+.view {
+  padding: 12px;
+}
+
+.text1 {
+  font-weight: bold;
+  font-size: 17px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 17px;
+  margin-left: 10px;
+}

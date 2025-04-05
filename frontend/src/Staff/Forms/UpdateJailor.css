@@ -1,0 +1,41 @@
+.update-jailor-form {
+    border: 1px solid #ccc;
+  }
+
+  .form-container {
+  
+    padding: 15px;
+  }
+  
+  .update-jailor-label {
+    margin-bottom: 5px;
+  }
+  
+  .update-jailor-input {
+    width:250px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .update-jailor-input2 {
+    width:250px;
+    height: 40px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .update-jailor-submit-button {
+    padding: 5px 15px;
+    background-color:#3C78AA ;
+    font-size: 17px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 440px;
+  }
+  

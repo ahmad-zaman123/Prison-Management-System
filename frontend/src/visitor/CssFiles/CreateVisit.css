@@ -1,0 +1,113 @@
+/* Custom modal overlay styles */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 9999; /* Ensure it appears above other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom modal container styles */
+.custom-modal-container {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+   width: 400px;
+    position: relative;
+}
+
+/* Custom close icon styles */
+.custom-close-icon {
+    position: absolute;
+    transition-duration: 150ms;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    cursor: pointer;
+    right:10px; /* Assuming the default font size of 1rem = 16px */
+    top: 10px; /* Assuming the default font size of 1rem = 16px */
+}
+
+
+
+
+
+/* Custom heading styles */
+.custom-heading {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Custom flex container styles */
+.custom-flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Custom info container styles */
+.custom-info {
+    display: flex;
+    gap: 30px;
+}
+
+/* Custom label styles */
+.custom-label {
+    font-weight: bold;
+}
+
+/* Custom button container styles */
+.custom-button-container {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+/* Custom button styles */
+.approve {
+    background-color: #3C78AA    ; /* Custom button color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.approve:hover {
+    background-color: #0c5d74; /* Darker color on hover */
+}
+
+
+.custom-sec-show {
+    display: flex;
+}
+
+.custom-sec-hide {
+    display: none;
+}
+
+.view {
+    padding: 12px;
+  }
+  
+  .text1 {
+    font-weight: bold;
+    font-size: 17px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .text {
+    font-size: 17px;
+    margin-left: 10px;
+  }

@@ -1,0 +1,16 @@
+.menuItem {
+    color: whitesmoke !important;
+    transition: background 0.3s ease;
+  }
+  
+   .menuItem:hover {
+    background-color: #1A3D5A !important; 
+    color: white !important;
+  }
+
+ 
+.ant-menu-item-selected {
+  background-color: #1A3D5A !important; 
+  color: white !important;
+} 
+  

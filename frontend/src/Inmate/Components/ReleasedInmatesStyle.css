@@ -1,0 +1,322 @@
+
+.closeIcon {
+  position: absolute;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+  margin-left: 200px;
+  margin-top: -28px;
+}
+
+
+.profile-container {
+  padding-bottom: 12px;
+  /* border: 1px solid #000000; */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+
+
+
+/* Table styles */
+.inmatesTable {
+  width: 93%;
+  margin: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 12px;
+  /* Rounded corners */
+  overflow: hidden;
+  border: 1px solid #ddd;
+  /* Light border */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* Adds shadow */
+  
+  
+  }
+  
+  
+  .inmatesTable th {
+  
+  width: fit-content;
+  
+
+  
+  padding: 12px;
+  text-align: left;
+  background-color: #3C78AA !important ;
+  color: white;
+  font-weight: bold;
+  border: none !important;
+  }
+
+  .inmatesTable td {
+  
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    }
+  
+  
+  
+  .inmatesTable th:first-child {
+    border-top-left-radius: 10px !important; /* Rounded left corner */
+  }
+  
+  .inmatesTable th:last-child {
+    border-top-right-radius: 10px !important; /* Rounded right corner */
+  }
+  
+/* Add button styles */
+.addButton {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100px;
+  margin-left: 90%;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #86B6F6;
+}
+
+.addButton:hover {
+  background-color: #176B87;
+}
+
+.update {
+  width: 70px;
+  background-color: #176B87;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  border: none;
+}
+
+.delete {
+  width: 40px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
+}
+
+.update:hover {
+  font-size: 17px;
+}
+
+.delete:hover {
+  background-color: #da190b;
+}
+
+.buttonColumn {
+  width: 8.8%;
+}
+
+.releasedcountContainer {
+  margin-left: 385px;
+  /* margin-top: 40px; */
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #3C78AA !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.wantedcountContainer {
+  margin-left: 400px;
+  /* margin-top: 40px; */
+  font-family: sans-serif;
+  font-weight: bold;
+  background-color: #3C78AA !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.releasedInmates {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 300px;
+  font-family: sans-serif;
+  font-size: 25px;
+  color: #89CFF0;
+}
+
+.wantedprofileTitle {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  color: #89CFF0;
+  margin-right: 85px;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-left: 110px;
+}
+
+.releasedsearchBar {
+  border: 1px solid #ccc;
+  height:37px ;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  border-radius: 4px;
+  padding-left: 10px;
+}
+
+.releasedsearchContainer {
+  position: relative;
+  }
+
+  .searchIcon {
+      position: absolute;
+      margin-top: 16px;
+      margin-left: 900px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ccc; 
+  }
+
+
+.countNumber {
+  margin-top: 5px;
+}
+
+.image {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 165px;
+  margin-bottom: 10px;
+  height: 250px;
+}
+
+.profileContainer {
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.title {
+  margin-left: 55px;
+  font-size: 15px;
+  margin-right: 12px;
+}
+
+.updateProfile {
+  width: 100px;
+  background-color: #176B87;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  margin-left: 112px;
+  margin-top: 20px;
+  border: none;
+}
+
+.deleteProfile {
+  width: 100px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: none;
+}
+
+.updateProfile:hover {
+  font-size: 17px;
+}
+
+.deleteProfile:hover {
+  font-size: 17px;
+}
+
+.printProfile {
+  margin-left: 150px;
+  width: 150px;
+  background-color: #86B6F6;
+  color: #000;
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 8px;
+  margin-top: 8px;
+  border: none;
+}
+
+.printProfile:hover {
+  font-size: 17px;
+}
+
+.sentence{
+  margin-left: 340px;
+  font-family: sans-serif;
+  font-weight: 500;
+}
+
+.releasedprofileTitle {
+  margin-top: 5px;
+  margin-bottom: 2px;
+  color: #89CFF0;
+  margin-right: 90px;
+  font-size: 25px;
+  font-family: sans-serif;
+  margin-left: 100px;
+}
+
+
+
+
+.update-wanted {
+  width: 40px;
+  background-color: #4682B4;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
+}
+
+.update-wanted:hover {
+  background-color: #0056b3;
+}
+
+.delete-wanted {
+  width: 40px;
+  background-color: red;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
+}
+
+.delete-wanted:hover {
+  background-color: #da190b;
+}
