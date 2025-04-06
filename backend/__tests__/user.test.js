@@ -44,7 +44,7 @@ describe('User API', () => {
       .expect(201);
 
     expect(res.body.username).toBe(newUser.username);
-    expect(res.body.password).toBe(undefined); // Password should not be returned in response
+    expect(res.body.password).toBeUndefined(); // Password should not be returned in response
     expect(res.status).toBe(201); // Status code 201 for created user
   });
 

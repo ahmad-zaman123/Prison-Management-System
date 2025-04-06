@@ -1,61 +1,118 @@
 // Import the Doctor model
-const Doctor = require('../models/DoctorModel');  // Adjust the path as needed
-const { MongoMemoryServer } = require('mongodb-memory-server');
+const app = require('../server'); 
+const request = require('supertest'); 
+const Doctor = require('../models/DoctorModel'); 
 const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server-core');
+const mongoServer = new MongoMemoryServer();
 
-let mongoServer;
 
 beforeAll(async () => {
-  mongoServer = await MongoMemoryServer.create();
-  const mongoUri = mongoServer.getUri();
-  await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+    await mongoServer.start();  
+    const uri = mongoServer.getUri();  
+  
+   
+    if (mongoose.connection.readyState === 0) {
+      await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    }
+  
 });
 
 afterAll(async () => {
-  await mongoose.disconnect();
-  await mongoServer.stop();
+    await mongoose.disconnect();
+    await mongoServer.stop();
 });
 
-// Define beforeEach hook outside of individual tests
+
 beforeEach(async () => {
-    // Clean up the database before each test
+    
     const count = await Doctor.countDocuments();
     if (count > 0) {
         await Doctor.deleteMany({});
     }
 });
 
-// Define your test cases below
+
+let doctorId; 
+
+
+const doctorData = {
+    FirstName: 'John',
+    LastName: 'Doe',
+    DateofBirth: new Date('1980-01-01'),  
+    NIC: 1234567890,  
+    ContactNumber: '1234567890',
+    Gender: 'Male',  
+    Specialty: 'Cardiology',
+    MedicalLicenseNumber: 'MD12345',
+    EducationalBackground: 'MBBS, MD in Cardiology',  
+    StartDate: new Date('2010-01-01'),  
+  };
+  
 describe('Doctor API', () => {
-    it('should add a new doctor', async () => {
-        // Test logic for adding a doctor
-    });
 
+    // Test for getting all doctors
     it('should get all doctors', async () => {
-        // Test logic for getting all doctors
+      const res = await request(app).get('/Doctros/');
+      expect(res.statusCode).toBe(200);
+      expect(Array.isArray(res.body)).toBe(true);
     });
+  
+    // Test for adding a new doctor
+    it('should add a new doctor', async () => {
+      const res = await request(app)
+        .post('/Doctros/')
+        .send(doctorData);
 
-    it('should get a doctor by ID', async () => {
-        // Test logic for getting a doctor by ID
+        doctorId = res.body._id;
+        
+      expect(res.statusCode).toBe(201);
+      expect(res.body).toHaveProperty('_id');
+      expect(res.body.FirstName).toBe(doctorData.FirstName);
+      expect(res.body.Specialty).toBe(doctorData.Specialty);
+  
+      doctorId = res.body._id;  
     });
-
+  
+    // Test for getting a single doctor by ID
+    it('should get a single doctor by ID', async () => {
+      const res = await request(app).get(`/Doctros/${doctorId}`);
+      expect(res.statusCode).toBe(200);
+      expect(res.body._id).toBe(doctorId);
+      expect(res.body.FirstName).toBe(doctorData.FirstName);
+    });
+  
+    // Test for returning 404 if doctor not found by ID
     it('should return 404 if doctor not found by ID', async () => {
-        // Test logic for handling doctor not found by ID
+      const res = await request(app).get('/Doctros/invalid-id');
+      expect(res.statusCode).toBe(404);
+      expect(res.body.message).toBe('Doctor not found');
     });
-
+  
+    // Test for updating a doctor by ID
     it('should update a doctor by ID', async () => {
-        // Test logic for updating a doctor by ID
+      const updatedData = { ...doctorData, Specialty: 'Neurology' };
+      const res = await request(app)
+        .put(`/Doctros/${doctorId}`)
+        .send(updatedData);
+  
+      expect(res.statusCode).toBe(200);
+      expect(res.body.Specialty).toBe('Neurology');
     });
-
-    it('should return 404 if trying to update a non-existent doctor', async () => {
-        // Test logic for handling update of non-existent doctor
-    });
-
+  
+    // Test for deleting a doctor by ID
     it('should delete a doctor by ID', async () => {
-        // Test logic for deleting a doctor by ID
+      const res = await request(app).delete(`/Doctros/${doctorId}`);
+      expect(res.statusCode).toBe(200);
+      expect(res.body.message).toBe('Doctor deleted successfully');
     });
-
+  
+    // Test for returning 404 if doctor not found during deletion
     it('should return 404 if trying to delete a non-existent doctor', async () => {
-        // Test logic for handling deletion of non-existent doctor
+      const res = await request(app).delete('/Doctros/invalid-id');
+      expect(res.statusCode).toBe(404);
+      expect(res.body.message).toBe('Doctor not found');
     });
-});
+  
+  });

@@ -1,6 +1,5 @@
-// __tests__/jailor.test.js
 const request = require('supertest');
-const app = require('../server'); // Ensure the path is correct
+const app = require('../server');
 
 let jailorId;
 
@@ -23,7 +22,7 @@ describe('Jailor API', () => {
     expect(res.statusCode).toBe(201);
     expect(res.body.FirstName).toBe(newJailor.FirstName);
     expect(res.body.LastName).toBe(newJailor.LastName);
-    jailorId = res.body._id;  // Store the id for use in later tests
+    jailorId = res.body._id;
   });
 
   it('should get all jailors', async () => {

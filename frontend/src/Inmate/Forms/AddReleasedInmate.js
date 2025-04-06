@@ -31,8 +31,8 @@ const AddReleasedInmate = ({ selectedInmate, updateInmate, onUpdate }) => {
 
     const validateForm = () => {
         // Check if any required field is empty
-        const { status, realReleaseDate, releaseReason, releaseBy, confirmReleased } = updatedInmateData;
-        if (!status || !realReleaseDate || !releaseReason || !releaseBy || !confirmReleased) {
+        const { status, realReleaseDate, releaseReason } = updatedInmateData;
+        if (!status || !realReleaseDate || !releaseReason ) {
             alert('Please fill out all required fields.');
             return false;
         }

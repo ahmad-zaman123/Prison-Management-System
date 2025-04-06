@@ -71,8 +71,7 @@ const AllVisitors = () => {
 
     const filteredVisitors = visitors.filter((visitor) =>
         visitor.firstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        visitor.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        visitor.nic.toLowerCase().includes(searchQuery.toLowerCase())
+        visitor.lastName.toLowerCase().includes(searchQuery.toLowerCase()) 
     );
 
     return (

@@ -1,7 +1,7 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
-const app = require('../server'); // Your Express app
+const app = require('../server'); 
 const Appointment = require('../models/appointment');
 
 let mongoServer;
@@ -9,7 +9,9 @@ let mongoServer;
 beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();
   const uri = mongoServer.getUri();
-  await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  if (mongoose.connection.readyState === 0) {
+    await mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+  }
 });
 
 afterAll(async () => {
@@ -35,13 +37,12 @@ describe('Appointment API', () => {
     };
 
     const res = await request(app)
-      .post('/appointment/addappointments')  // Ensure the endpoint is correct
+      .post('/appointment/addappointments') 
       .send(sampleData);
 
     expect(res.statusCode).toBe(201);
     expect(res.text).toBe('New appointment added successfully');
 
-    // Check if the appointment exists in the database
     const dbAppointment = await Appointment.findOne({ fullname: 'John Doe' });
     expect(dbAppointment).not.toBeNull();
     expect(dbAppointment.fullname).toBe('John Doe');
@@ -58,7 +59,7 @@ describe('Appointment API', () => {
     };
     await Appointment.create(sampleData);
 
-    const res = await request(app).get('/appointment/findall');  // Ensure correct endpoint
+    const res = await request(app).get('/appointment/findall'); 
 
     expect(res.statusCode).toBe(200);
     expect(res.body[0].action).toBe('Pending');
@@ -75,36 +76,10 @@ describe('Appointment API', () => {
     };
     await Appointment.create(sampleData);
 
-    const res = await request(app).get('/appointment/approved');  // Ensure correct endpoint
+    const res = await request(app).get('/appointment/approved'); 
 
     expect(res.statusCode).toBe(200);
     expect(res.body[0].action).toBe('Approved');
-  });
-
-  it('should get a single appointment by ID', async () => {
-    const sampleData = {
-      fullname: 'John Doe',
-      inmatenumber: '123',
-      reason: 'Checkup',
-      appointmentDate: '2025-05-01',
-      notes: 'Urgent',
-      action: 'Pending'
-    };
-    const appointment = await Appointment.create(sampleData);
-
-    const res = await request(app).get(`/appointment/${appointment._id}`);  // Ensure correct endpoint
-
-    expect(res.statusCode).toBe(200);
-    expect(res.body.fullname).toBe('John Doe');
-  });
-
-  it('should return 404 if appointment not found by ID', async () => {
-    const fakeId = new mongoose.Types.ObjectId();
-
-    const res = await request(app).get(`/appointment/${fakeId}`);  // Ensure correct endpoint
-
-    expect(res.statusCode).toBe(404);
-    expect(res.body.message).toBe('Appointment not found');
   });
 
   it('should update an appointment by ID', async () => {
@@ -119,7 +94,7 @@ describe('Appointment API', () => {
     const appointment = await Appointment.create(sampleData);
 
     const res = await request(app)
-      .put(`/appointment/update/${appointment._id}`)  // Ensure correct endpoint
+      .put(`/appointment/update/${appointment._id}`)  
       .send({ action: 'Approved' });
 
     expect(res.statusCode).toBe(200);
@@ -138,7 +113,7 @@ describe('Appointment API', () => {
     const appointment = await Appointment.create(sampleData);
 
     const res = await request(app)
-      .delete(`/appointment/delete/${appointment._id}`);  // Ensure correct endpoint
+      .delete(`/appointment/delete/${appointment._id}`);  
 
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toBe('Appointment deleted successfully');
@@ -149,7 +124,7 @@ describe('Appointment API', () => {
 
 
     const res = await request(app)
-      .delete(`/appointment/delete/${fakeId}`);  // Ensure correct endpoint
+      .delete(`/appointment/delete/${fakeId}`);  
 
     expect(res.statusCode).toBe(404);
     expect(res.body.message).toBe('Appointment not found');

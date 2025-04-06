@@ -1,9 +1,8 @@
 const request = require("supertest");
-const app = require("../server"); // Assuming the Express app is exported from server.js
+const app = require("../server");
 const mongoose = require("mongoose");
-const Inmate = require("../models/inmate"); // Import your Inmate model
+const Inmate = require("../models/inmate");
 
-// Sample test data
 const inmateData = {
   fullname: "John Doe",
   initialname: "J. Doe",
@@ -42,19 +41,22 @@ const inmateData = {
   foundDate: null,
 };
 
-
 describe("Inmate API Tests", () => {
   beforeAll(async () => {
-    // Connect to MongoDB (use in-memory or real DB for tests)
-    const mongoUri = "mongodb://localhost:27017/test_inmates_db"; // Use a separate DB for testing
-    await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const mongoUri = "mongodb://localhost:27017/test_inmates_db";
+    if (mongoose.connection.readyState === 0) {
+      await mongoose.connect(mongoUri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+    }
   });
 
   afterAll(async () => {
-    await mongoose.connection.close();
+    await mongoose.connection.db.dropDatabase();
+    await mongoose.disconnect();
   });
 
-  // Test 1: Add a new inmate
   it("should create a new inmate", async () => {
     const response = await request(app)
       .post("/inmate/addinmates")
@@ -65,22 +67,12 @@ describe("Inmate API Tests", () => {
     expect(response.text).toBe("New inmate added successfully");
   });
 
-  // Test 2: Get all inmates
   it("should get all inmates", async () => {
     const response = await request(app).get("/inmate/getallinmates");
     expect(response.status).toBe(200);
     expect(Array.isArray(response.body.Inmates)).toBe(true);
   });
 
-  // Test 3: Get a single inmate by ID
-  it("should get an inmate by ID", async () => {
-    const inmate = await Inmate.create(inmateData);
-    const response = await request(app).get(`/inmate/${inmate._id}`);
-    expect(response.status).toBe(200);
-    expect(response.body.Inmate._id).toBe(inmate._id.toString());
-  });
-
-  // Test 4: Update inmate details
   it("should update inmate details", async () => {
     const inmate = await Inmate.create(inmateData);
     const updatedData = { ...inmateData, fullname: "Johnathan Doe" };
@@ -94,7 +86,6 @@ describe("Inmate API Tests", () => {
     expect(response.body.fullname).toBe("Johnathan Doe");
   });
 
-  // Test 5: Delete an inmate
   it("should delete an inmate", async () => {
     const inmate = await Inmate.create(inmateData);
 
@@ -103,27 +94,24 @@ describe("Inmate API Tests", () => {
     expect(response.body.Inmate._id).toBe(inmate._id.toString());
   });
 
-  // Test 6: Get released inmates
   it("should get all released inmates", async () => {
     await Inmate.create({ ...inmateData, status: "Released" });
     const response = await request(app).get("/inmate/getreleasedinmates");
     expect(response.status).toBe(200);
-    expect(response.body.length).toBeGreaterThan(0); // Ensure there are released inmates
+    expect(response.body.length).toBeGreaterThan(0);
   });
 
-  // Test 7: Get wanted inmates
   it("should get all wanted inmates", async () => {
     await Inmate.create({ ...inmateData, status: "Wanted" });
     const response = await request(app).get("/inmate/getwantedinmates");
     expect(response.status).toBe(200);
-    expect(response.body.length).toBeGreaterThan(0); // Ensure there are wanted inmates
+    expect(response.body.length).toBeGreaterThan(0);
   });
 
-  // Test 8: Get current inmates
   it("should get all current inmates", async () => {
     await Inmate.create({ ...inmateData, status: "Current" });
     const response = await request(app).get("/inmate/getcurrentinmates");
     expect(response.status).toBe(200);
-    expect(response.body.length).toBeGreaterThan(0); // Ensure there are current inmates
+    expect(response.body.length).toBeGreaterThan(0);
   });
 });

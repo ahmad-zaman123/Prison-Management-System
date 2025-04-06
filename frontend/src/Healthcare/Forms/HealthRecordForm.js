@@ -77,6 +77,7 @@ const validateDiagnosis = (value) => {
         try {
             const response = await axios.post('http://localhost:3500/healthrecord/addhealthrecords', formData);
             console.log('Success:', response.data);
+            window.location.href = '/healthRecords';
             // Reset form data
             setFormData({
                 InmateName: '',

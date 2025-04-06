@@ -41,7 +41,6 @@ app.use('/users', require('./routes/userRoutes.js'));
 
 app.use("/Jailors",require("./routes/JailorRoutes.js"))
 
-// Change this line in server.js
 app.use("/Doctros", require("./routes/doctorRoutes.js"));
 
 
@@ -60,6 +59,10 @@ app.use('/api/visitor', require('./routes/visitorRoutes'));
 app.use('/api/visit', require('./routes/visitRoutes'));
 
 
+// testing
+app.get('/api/test', (req, res) => {
+    res.status(200).json({ message: 'API is working!' });
+  });
 
 app.all('*',(req,res)=>{
     res.status(404)
@@ -79,5 +82,7 @@ mongoose.connection.once('open',()=>{
 
 mongoose.connection.on('error',err =>{
     console.log(err)
-    logEvents(`${err.no}:${err.code}\t${err.syscall}\t{err.hostname}`,'mongoErrLog.log')
+    // logEvents(`${err.no}:${err.code}\t${err.syscall}\t{err.hostname}`,'mongoErrLog.log')
 })
+
+module.exports = app;

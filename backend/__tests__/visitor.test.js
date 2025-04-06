@@ -3,47 +3,38 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-// Import the visitor routes
-const visitorRoutes = require('./routes/visitorRoutes');
-const Visitor = require('./models/Visitor');
+const visitorRoutes = require('../routes/visitorRoutes');
+const Visitor = require('../models/Visitor');
 
-// Middleware to parse JSON
 app.use(express.json());
 
-// Mount the visitor routes
 app.use('/api/visitor', visitorRoutes);
 
-// Connect to an in-memory database for testing
 beforeAll(async () => {
-  const url = 'mongodb://localhost:27017/test_db'; // Change the DB name as needed
+  const url = 'mongodb://localhost:27017/test_db';
   await mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 });
 
-// Clear all visitor data before each test (reset DB)
 beforeEach(async () => {
   await Visitor.deleteMany();
 });
 
-// Disconnect from DB after all tests
 afterAll(async () => {
   await mongoose.disconnect();
 });
 
 describe('Visitor API', () => {
 
-  // Test the GET all visitors route
   it('should return all visitors', async () => {
     const res = await request(app)
       .get('/api/visitor')
       .expect(200);
 
-    expect(Array.isArray(res.body)).toBe(true); // Should return an array
-    expect(res.body.length).toBe(0); // Initially, the database should be empty
+    expect(Array.isArray(res.body)).toBe(true);
+    expect(res.body.length).toBe(0);
   });
 
-  // Test the GET visitor by ID route
   it('should return a specific visitor by ID', async () => {
-    // First, create a new visitor
     const newVisitor = {
       firstName: 'John',
       lastName: 'Doe',
@@ -64,7 +55,6 @@ describe('Visitor API', () => {
 
     const visitorId = visitorRes.body.newVisitor._id;
 
-    // Now, fetch the visitor by ID
     const res = await request(app)
       .get(`/api/visitor/${visitorId}`)
       .expect(200);
@@ -74,7 +64,6 @@ describe('Visitor API', () => {
     expect(res.body.inmateNo).toBe(newVisitor.inmateNo);
   });
 
-  // Test the POST create visitor route
   it('should create a new visitor', async () => {
     const newVisitor = {
       firstName: 'Jane',
@@ -99,9 +88,7 @@ describe('Visitor API', () => {
     expect(res.body.newVisitor.inmateNo).toBe(newVisitor.inmateNo);
   });
 
-  // Test the PUT update visitor by ID route
   it('should update an existing visitor', async () => {
-    // First, create a new visitor
     const newVisitor = {
       firstName: 'Tom',
       lastName: 'Jones',
@@ -122,10 +109,9 @@ describe('Visitor API', () => {
 
     const visitorId = visitorRes.body.newVisitor._id;
 
-    // Now, update the visitor
     const updatedVisitor = {
-      timeOfVisit: '02:00 PM', // Changing the time of visit
-      purposeOfVisit: 'Psychological Visit' // Changing the purpose of visit
+      timeOfVisit: '02:00 PM',
+      purposeOfVisit: 'Psychological Visit'
     };
 
     const res = await request(app)
@@ -138,9 +124,7 @@ describe('Visitor API', () => {
     expect(res.body.updatedVisitor.purposeOfVisit).toBe(updatedVisitor.purposeOfVisit);
   });
 
-  // Test the DELETE visitor by ID route
   it('should delete a visitor by ID', async () => {
-    // First, create a new visitor
     const newVisitor = {
       firstName: 'Emily',
       lastName: 'White',
@@ -161,7 +145,6 @@ describe('Visitor API', () => {
 
     const visitorId = visitorRes.body.newVisitor._id;
 
-    // Now, delete the visitor
     const res = await request(app)
       .delete(`/api/visitor/delete/${visitorId}`)
       .expect(200);
@@ -169,7 +152,6 @@ describe('Visitor API', () => {
     expect(res.body.message).toBe('Visitor deleted');
   });
 
-  // Test deleting a visitor that doesn't exist
   it('should return 404 if visitor not found for deletion', async () => {
     const nonExistentId = '60d2b8f3b6a7909a5c74e3c1';
 

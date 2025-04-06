@@ -44,7 +44,7 @@ function HealthcareSideNavbar({ userName, profilePicture }) {
             
           </Menu>
     
-          <div className="" style={{ width: "90%",marginTop:"240px",marginLeft:"20px",color:"whitesmoke" }}>
+          <div className="" style={{ width: "90%",marginTop:"270px",marginLeft:"20px",color:"whitesmoke" }}>
                       <div className="mt-auto d-flex align-items-center justify-content-between w-100">
                           <Link to="/Admindashbord"><img src={back} color="white" width="25px" height="25px" /></Link>
                           <Link to="/"><img src={logout} color="white" width="30px" height="30px" /></Link>

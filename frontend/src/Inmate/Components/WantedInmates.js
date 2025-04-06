@@ -313,15 +313,15 @@ function WantedInmates() {
                 <table className="inmatesTable">
                     <thead>
                         <tr>
-                            <th>Inmate Photo</th>
+                        <th>Inmate Photo</th>
                             <th>Full Name</th>
                             <th>Date of Birth</th>
                             <th>Gender</th>
-                            <th>NIC</th>
-                            <th>Address</th>
-                            <th>Contact Number</th>
-                            <th>Escaped Date</th>
-                            <th>Status</th>
+                            {/* <th>Marital Status</th> */}
+                            <th>Inmate Number</th>
+                            <th>Offense</th>
+                            <th>Escape Date</th>
+                            <th>Escape Time</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -338,17 +338,20 @@ function WantedInmates() {
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.fullname}</td>
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.birthday ? new Date(inmate.birthday).toISOString().split('T')[0] : ''}</td>
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.gender}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.nic}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.address}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.contactnumber}</td>
+                                <td onClick={() => showProfileModal(inmate)}>{inmate.inmatenumber}</td>
+                                <td onClick={() => showProfileModal(inmate)}>{inmate.offense}</td>
+                           
+                                
                                 <td onClick={() => showProfileModal(inmate)}>
+
                                     {inmate.escapedDate ? (
                                         new Date(inmate.escapedDate).toISOString().split('T')[0]
                                     ) : (
                                         ''
                                     )}
                                 </td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.status}</td>
+                                <td onClick={() => showProfileModal(inmate)}>{inmate.escapedTime}</td>
+                                
                                 <td>
                                 <button className="update-wanted" onClick={() => handleUpdateClick(inmate)}>  <Pencil size={18} /></button><br />
                                     <button className="delete-wanted" onClick={() => deleteWantedInmate(inmate._id)}>  <Trash size={18} /></button>

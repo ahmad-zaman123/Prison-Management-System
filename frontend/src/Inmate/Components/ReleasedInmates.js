@@ -257,11 +257,10 @@ function ReleasedInmates() {
                             <th>Full Name</th>
                             <th>Date of Birth</th>
                             <th>Gender</th>
-                            <th>NIC</th>
-                            <th>Address</th>
-                            <th>Contact Number</th>
+                         
                             <th>Offense</th>
-                            <th>Status</th>
+                            <th>Release Date</th>
+                            <th>Release Reason</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -278,11 +277,17 @@ function ReleasedInmates() {
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.fullname}</td>
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.birthday ? new Date(inmate.birthday).toISOString().split('T')[0] : ''}</td>
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.gender}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.nic}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.address}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.contactnumber}</td>
+                              
                                 <td onClick={() => showProfileModal(inmate)}>{inmate.offense}</td>
-                                <td onClick={() => showProfileModal(inmate)}>{inmate.status}</td>
+                                <td onClick={() => showProfileModal(inmate)}>{inmate.realReleaseDate ? (
+                                        new Date(inmate.realReleaseDate).toISOString().split('T')[0]
+                                    ) : (
+                                        ''
+                                    )}</td>
+
+                                <td onClick={() => showProfileModal(inmate)}>{inmate.releaseReason}</td>
+
+                                {/* <td onClick={() => showProfileModal(inmate)}>{inmate.status}</td> */}
                                 <td>
                                     <button className="delete" onClick={() => deleteReleasedInmate(inmate._id)}>  <Trash size={18} /></button>
                                 </td>

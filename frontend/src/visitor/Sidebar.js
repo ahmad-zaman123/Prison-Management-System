@@ -46,7 +46,7 @@ const Sidebar = () => {
             
           </Menu>
     
-          <div className="" style={{ width: "90%",marginTop:"290px",marginLeft:"20px",color:"whitesmoke" }}>
+          <div className="" style={{ width: "90%",marginTop:"320px",marginLeft:"20px",color:"whitesmoke" }}>
                       <div className="mt-auto d-flex align-items-center justify-content-between w-100">
                           <Link to="/Admindashbord"><img src={back} color="white" width="25px" height="25px" /></Link>
                           <Link to="/"><img src={logout} color="white" width="30px" height="30px" /></Link>

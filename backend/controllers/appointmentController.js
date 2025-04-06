@@ -44,7 +44,7 @@ const findAll = async (req, res) => {
   
 
   // Find approved appointments
-    exports.findApprovedAppointments = async (req, res) => {
+    const findApprovedAppointments = async (req, res) => {
         try {
             const approvedAppointments = await appointment.find({ action: 'Approved' });
             res.status(200).json(approvedAppointments);
@@ -55,16 +55,16 @@ const findAll = async (req, res) => {
 
   
   // Retrieve a single appointment by id
-  exports.findOne = async (req, res) => {
-    try {
-      const appointment = await appointment.findById(req.params.id);
-      if (!appointment)
-        return res.status(404).json({ message: "Appointment not found" });
-      res.status(200).json(appointment);
-    } catch (error) {
-      res.status(404).json({ message: error.message });
-    }
-  };
+//   const findOne = async (req, res) => {
+//     try {
+//       const appointment = await appointment.findById(req.params.id);
+//       if (!appointment)
+//         return res.status(404).json({ message: "Appointment not found" });
+//       res.status(200).json(appointment);
+//     } catch (error) {
+//       res.status(404).json({ message: error.message });
+//     }
+//   };
 
 
 // Update appointment details
@@ -83,7 +83,7 @@ const update = async (req, res) => {
 
   
     // Delete an appointment by id
-    exports.deleteAppointment = async (req, res) => {
+    const deleteAppointment = async (req, res) => {
         try {
             const deletedAppointment = await appointment.findByIdAndDelete(req.params.id);
             if (!deletedAppointment)
@@ -105,6 +105,8 @@ const update = async (req, res) => {
 exports.addAppointments = addAppointments;
 exports.findAll = findAll;
 exports.update = update;
+exports.findApprovedAppointments = findApprovedAppointments;
+exports.deleteAppointment = deleteAppointment
 
 
 

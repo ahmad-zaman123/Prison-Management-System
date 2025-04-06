@@ -54,7 +54,7 @@ const AllVisits = () => {
 
     const filteredVisits = visits.filter(visit =>
         visit.visitorName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        visit.nic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      
         visit.inmateNo.toLowerCase().includes(searchQuery.toLowerCase())
     );
 

@@ -38,7 +38,6 @@ const JailorList = () => {
             jailor.FirstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
             jailor.LastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
             jailor.jobTitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            jailor.NIC.toString().includes(searchQuery) ||
             jailor.ContactNumber.toString().includes(searchQuery) //
         );
         setFilteredJailors(filtered);
@@ -127,18 +126,6 @@ const JailorList = () => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US');
     };
-
-    const handleSearch = () => {
-        const filteredJailors = jailors.filter((jailor) =>
-            Object.values(jailor).some((field) =>
-                field ? field.toString().toLowerCase().includes(searchQuery.toLowerCase()) : false
-            )
-        );
-        setFilteredJailors(filteredJailors);
-        setNoResults(filteredJailors.length === 0);
-    };
-
-
 
     return (
 

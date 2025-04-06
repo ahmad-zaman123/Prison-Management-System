@@ -35,8 +35,7 @@ const DoctorList = () => {
     useEffect(() => {
         const filtered = doctors.filter(doctor =>
             doctor.FirstName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            doctor.LastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            doctor.NIC.toString().includes(searchQuery)
+            doctor.LastName.toLowerCase().includes(searchQuery.toLowerCase())
         );
         setFilteredDoctors(filtered);
         setNoResults(filtered.length === 0);
@@ -51,10 +50,6 @@ const DoctorList = () => {
         setAddDoctorModalVisible(false);
         setIsVisibleDoctorProfileModal(false);
         setSelectedDoctor(null);
-    };
-
-    const handlePDFCancel = () => {
-        setIsVisibleDoctorPDFModal(false);
     };
 
     const showDoctorProfileModal = (doctor) => {
@@ -116,20 +111,6 @@ const DoctorList = () => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US');
     };
-
-    const handleSearch = () => {
-        const filteredDoctors = doctors.filter((doctor) =>
-            Object.values(doctor).some((field) =>
-                field ? field.toString().toLowerCase().includes(searchQuery.toLowerCase()) : false
-            )
-        );
-        setFilteredDoctors(filteredDoctors);
-        setNoResults(filteredDoctors.length === 0);
-    };
-
-
-
-
 
 
     return (
