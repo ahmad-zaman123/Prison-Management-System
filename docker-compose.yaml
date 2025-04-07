@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  # BACKEND
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: prison_backend
+    ports:
+      - "3500:3500"
+    depends_on:
+      - mongodb
+    environment:
+      # Example environment variable for your MongoDB URI
+      MONGO_URI: mongodb://mongodb:27017/prison_management 
+    networks:
+      - prison_network
+
+  # FRONTEND
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: prison_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - prison_network
+
+  # MONGODB
+  mongodb:
+    image: mongo:latest
+    container_name: prison_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - prison_network
+
+# Create a user-defined bridge network for internal container communication
+networks:
+  prison_network:
+    driver: bridge
+
+# Named volume for MongoDB data persistence
+volumes:
+  mongo_data:
