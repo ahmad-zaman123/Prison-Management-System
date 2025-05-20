@@ -1,88 +1,56 @@
-.AppointmentContainer {
-    max-width: 550px;
-    margin: 5px;
-    padding: 30px;
-    border: 1px solid #000000;
-    border-radius: 8px;
+.FormContainer {
+    max-width: 500px;
+    max-height: auto;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    /* background-color: #fff; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
-.AppointmentContainer h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    margin-left: 20px;
-    color: #89CFF0;
+
+
+.formsGroup {
+    margin-bottom: 0px;
 }
 
-.AppointmentContainer form {
-    display: flex;
-    flex-direction: column;
-}
-
-.AppointmntContainer label {
+.formsGroup label {
+    display: block;
     margin-bottom: 5px;
-    font-weight: bolder;
-    font-size: 18px;
 }
 
-.AppointmentContainer input[type="text"],
-.AppointmentContainer input[type="date"],
-.AppointmentContainer textarea {
-    padding: 8px;
+.formsGroup input[type="text"],
+.formsGroup input[type="date"],
+.formsGroup textarea {
+    width: 100%;
+    padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 7px;
-    margin-bottom: -20px;
-    font-size: 14px;
-    font-family: sans-serif;
+    border-radius: 5px;
 }
 
-.AppointmentContainer textarea {
-    resize: none;
-    margin-top: -12px;
+.formsGroup textarea {
+    height: 100px;
 }
 
-.AppointmentContainer button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4682B4;
+
+
+
+.recordButton {
+    background-color: #3C78AA;
     color: #fff;
     border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    margin-left: 320px;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
     font-weight: bold;
-    width: 40%;
-    margin-left: 140px;
-    margin-top: 20px;
+    font-size: 15px;
 }
 
-.AppointmentContainer button[type="submit"]:hover {
-    background-color: #4682B4;
-    font-size: 18px;
+.recordButton:hover {
+    background-color: #86B6F6;
+    /* color: #000000; */
 }
-.colour th {
- 
-    padding: 12px;
-    text-align: left;
-    background-color: #3C78AA;
-    color: white;
-    font-weight: bold;
-    border: none;
-   
-  }
-  .colour th:first-child {
-    border-top-left-radius: 10px; /* Rounded left corner */
-  }
-  
-  .colour th:last-child {
-    border-top-right-radius: 10px; /* Rounded right corner */
-  }
-  .table-container {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: white;
-    border-radius: 12px; /* Rounded corners */
-    overflow: hidden;
-    border: 1px solid #ddd; /* Light border */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
-  }
+
+
+

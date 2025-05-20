@@ -81,7 +81,7 @@ function UpdateJailor({ selectedJailor, onUpdate, updateJailor }) {
         <div>
         <label className='update-jailor-label'>Job Title :</label><br />
         <select name="jobTitle" className='update-jailor-input' onChange={handleChange} value={inputs.jobTitle}>
-          <option value="" disabled selected>Choose an option</option>
+          <option value="" disabled >Choose an option</option>
           <option value="CorrectionalOfficer">Correctional Officer</option>
           <option value="CorrectionalDeputy">Correctional Deputy</option>
           <option value="DetentionOfficer">Detention Officer</option>

@@ -85,7 +85,7 @@ const UpdateVisitor = ({ isOpen, onClose, refreshList, visitorId }) => {
 
         if (!visitorData.contactNumber.trim()) {
             errors.contactNumber = 'Contact Number is required';
-        } else if (!/^0\d{9}$/.test(visitorData.contactNumber)) {
+        } else if (!/^0\d{10}$/.test(visitorData.contactNumber)) {
             errors.contactNumber = 'Contact number must start with 0 and have 10 digits';
         }
         if (!visitorData.inmateNo.trim()) {

@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from 'antd';
+// import { useNavigate } from 'react-router-dom';
 import "./releasedformStyle.css";
 
 const { TextArea } = Input;
 
 
 const WantedToCurrentInmate = ({ selectedInmate, updateInmate, onUpdate }) => {
+
+    // const navigate = useNavigate();
+
     const [updatedInmateData, setUpdatedInmateData] = useState({
         status: '',
         foundDate: '',
@@ -26,17 +30,21 @@ const WantedToCurrentInmate = ({ selectedInmate, updateInmate, onUpdate }) => {
 
     const redirectToCurrentInmate = () => {
         window.location.href = '/current';
+        // navigate("/current");
     };
 
     return (
         <div className="releaseformContainer">
             <form onSubmit={handleSubmit}>
+
+            <h3 style={{ color: '#3C78AA', fontWeight: 'bold', textAlign: 'center', marginBottom: '25px' }}>Current Inmate Form</h3>
                 
                 <div>
                     <label htmlFor="status">Status:</label>
                     <select
                         id="status"
                         name="status"
+                        style={{ height: '40px' }}
                         value={updatedInmateData.status}
                         onChange={handleInputChange}
                     >
@@ -53,28 +61,16 @@ const WantedToCurrentInmate = ({ selectedInmate, updateInmate, onUpdate }) => {
                         type="date"
                         id="foundDate"
                         name="foundDate"
+                        style={{ height: '40px'}}
                         value={updatedInmateData.foundDate}
                         onChange={handleInputChange}
                     />
                 </div>
-                {/* Additional Notes */}
-                <div className="textareaContainer">
-                    <label htmlFor="additionalNotes">Additional Notes:</label>
-                    <div className="textarea">
-                        <TextArea
-                            rows={4} 
-                            size="fixed"
-                            type="text"
-                            id="additionalNotes"
-                            className="additionalNotes"
-                            name="additionalNotes"
-                            value={updatedInmateData.additionalNotes}
-                            onChange={handleInputChange}
-                        />
-                    </div>
-                </div>
+               
 
-                <button type="submit">Add to Current Inmates List</button>
+                <button
+                 style={{backgroundColor:'#3C78AA',width:'230px',marginTop:'20px',marginBottom:'-20px',marginLeft:'70px'}}
+                 type="submit" className='releasedProfile'>Add to Current Inmates</button>
             </form>
         </div>
     );

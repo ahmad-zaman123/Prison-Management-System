@@ -133,11 +133,14 @@ function AllHealthRecords() {
                 visible={isVisibleAddModal}
                 onCancel={handleCancelAddModal}
                 footer={null}
-                closeIcon={<span className="close">X</span>}
                 width={500}
                 style={{ marginTop: -50, marginBottom: 120 }}
             >
-                <HealthRecordForm />
+                <HealthRecordForm
+                onSuccess={() => {
+                    handleCancelAddModal();          // close modal
+                    fetchHealthRecords(); // refresh list
+                }} />
             </Modal>
 
 

@@ -187,7 +187,11 @@ function CurrentInmate() {
                     width={650}
                     style={{ marginTop: -50, marginBottom: 120 }}
                 >
-                    <MergedForm onUpdate={() => fetchHandler().then(data => setCurrentInmates(data))} />
+                    <MergedForm onUpdate={() => fetchHandler().then(data => setCurrentInmates(data))}
+                    onClose={handleCancelAddModal}
+                    onAdd={() => {
+                        fetchHandler().then(data => setCurrentInmates(data));
+                      }}/>
                 </Modal>
 
                 <Modal
@@ -277,13 +281,7 @@ function CurrentInmate() {
                                     <button className="releasedProfile" onClick={() => handleAddToReleasedList(selectedInmate)}>Add To Released List</button>
                                 </div>
 
-                                {/* <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-
-                                    <button className="updateInmateProfile" style={{ background: '#4682B4' }} onClick={() => handleUpdateClick(selectedInmate)}>UPDATE</button>
-
-                                    <button className="deleteInmateProfile" onClick={() => showDeleteModal(selectedInmate)}>DELETE</button>
-
-                                </div> */}
+                               
 
 
                                 <Modal

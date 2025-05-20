@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import "./releasedformStyle.css";
 
 const { TextArea } = Input;
 
 const AddReleasedInmate = ({ selectedInmate, updateInmate, onUpdate }) => {
+    const navigate = useNavigate();
     const [updatedInmateData, setUpdatedInmateData] = useState({
         status: '',
         realReleaseDate: '',
@@ -40,7 +42,8 @@ const AddReleasedInmate = ({ selectedInmate, updateInmate, onUpdate }) => {
     };
 
     const redirectToReleasedInmate = () => {
-        window.location.href = '/released';
+        
+        navigate("/released");
     };
 
     return (

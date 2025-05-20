@@ -6,7 +6,6 @@ import './healthRecordForm.css';
 
 const UpdateHealthRecordForm = ({ visible, onCancel, healthRecord, fetchHealthRecords }) => {
     const [form] = Form.useForm();
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (healthRecord) {
@@ -29,20 +28,24 @@ const UpdateHealthRecordForm = ({ visible, onCancel, healthRecord, fetchHealthRe
     };
 
     const onFinish = async (values) => {
+        console.log("Submitted values:", values);
+        if (!healthRecord?._id) {
+            message.error("Health record ID is missing.");
+            return;
+        }
+    
         try {
-            setLoading(true);
             const response = await axios.put(`http://localhost:3500/healthrecord/updatehealthrecords/${healthRecord._id}`, values);
             console.log('Success:', response.data);
             message.success('Health record updated successfully');
             onCancel();
             fetchHealthRecords();
         } catch (error) {
-            console.error('Error:', error.response.data);
+            console.error('Error:', error?.response?.data || error.message);
             message.error('Failed to update health record');
-        } finally {
-            setLoading(false);
         }
     };
+    
 
     return (
         <Modal
@@ -63,30 +66,14 @@ const UpdateHealthRecordForm = ({ visible, onCancel, healthRecord, fetchHealthRe
             className="formGroup"
                 name="InmateName"
                 label="Inmate Name"
-                rules={[
-                    
-                    { pattern: /^[a-zA-Z. ]+$/, message: 'Inmate Name must include only letters and "." symbol' }
-                ]}
+                
             >
                 <Input />
             </Form.Item>
                 <Form.Item
                 className="formGroup"
-                    name="dateOfBirth"
+                    name='dateOfBirth'
                     label="Date of Birth"
-                    
-                    rules={[
-                        
-                        () => ({
-                            validator(_, value) {
-                                const eighteenYearsAgo = moment().subtract(18, 'years');
-                                if (!value || value.isBefore(eighteenYearsAgo)) {
-                                    return Promise.resolve();
-                                }
-                                return Promise.reject(new Error('Date of Birth must be at least 18 years ago'));
-                            },
-                        }),
-                    ]}
                 >
                     <DatePicker style={{height:'40px',width:'100%'}} format="YYYY-MM-DD" />
                 </Form.Item>
@@ -94,10 +81,7 @@ const UpdateHealthRecordForm = ({ visible, onCancel, healthRecord, fetchHealthRe
                 className="formGroup"
                     name="diagnosis"
                     label="Diagnosis"
-                    rules={[
-                        ,
-                        { validator: validateDiagnosis }
-                    ]}
+                    
                 >
                     <Input />
                 </Form.Item>
@@ -117,7 +101,8 @@ const UpdateHealthRecordForm = ({ visible, onCancel, healthRecord, fetchHealthRe
                     <Input.TextArea style={{ resize: 'none' }} />
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" htmlType="submit" loading={loading} className="updateButton">
+                <Button type="primary" htmlType="submit" className="updateButton">
+
                         Update
                     </Button>
                 </Form.Item>

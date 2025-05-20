@@ -4,7 +4,7 @@ import { message } from 'antd';
 import JailorPersonalInfo from './JailorPersonalInfo';
 import './AddjailorForm.css'; 
 
-function AddjailorForm() {
+function AddjailorForm({ onAdd }) {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
     FirstName: "",
@@ -29,6 +29,7 @@ function AddjailorForm() {
           await axios.post("http://localhost:3500/Jailors", formData);
           console.log("Form submitted successfully!");
           setIsSubmitted(true);
+          if (onAdd) onAdd();
         } catch (error) {
           console.error("Error:", error);
           // Optionally, you might want to inform the user that there was an error

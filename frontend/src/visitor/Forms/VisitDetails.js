@@ -4,35 +4,7 @@ import axios from 'axios';
 
 const VisitDetails = ({ visitorData, handleChange, errors }) => {
 
-    // const [inmateData, setInmateData] = useState([]);
-    // const [selectedInmateName, setSelectedInmateName] = useState("");
-
-    // const getData = async () => {
-    //     try {
-    //         const response = await axios.get("http://localhost:3500/api/visit");
-    //         setInmateData(response.data);
-    //         console.log(response.data);
-    //     } catch(e) {
-    //         console.log(e);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getData();
-    // }, [])
-
-    // const handleInmateNoChange = (event) => {
-    //     const selectedInmateNo = event.target.value;
-    //     const selectedInmate = inmateData.find(inmate => inmate.inmateNo === selectedInmateNo);
-    //     if (selectedInmate) {
-    //         setSelectedInmateName(selectedInmate.initialname);
-    //         handleChange({ target: { name: 'inmateNo', value: selectedInmateNo } });
-    //         handleChange({ target: { name: 'inmateName', value: selectedInmate.initialname } });
-    //     } else {
-    //         setSelectedInmateName("");
-    //         handleChange(event);
-    //     }
-    // };
+    
 
     return (
         <div>

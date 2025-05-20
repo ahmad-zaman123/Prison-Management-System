@@ -30,7 +30,7 @@
 }
 
 .releaseformContainer button[type="submit"] {
-    background-color: #176B87;
+    background-color:#3C78AA;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -46,8 +46,7 @@
 }
 
 .releaseformContainer button[type="submit"]:hover {
-    background-color: #176B87;
-    font-size: 18px;
+    background-color: cornflowerblue;
 }
 
 /* Optional: Style for error messages */

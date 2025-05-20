@@ -132,7 +132,7 @@ function WantedInmates() {
 
                 <div className="head">
                     <h6 className="fw-bold" style={{ fontSize: "30px", marginBottom: "15px", textAlign: "left" }}>
-                        Released Inmates List
+                        Wanted Inmates List
                     </h6>
 
                 </div>
@@ -248,14 +248,7 @@ function WantedInmates() {
                                     <span className="profile-value">:  {selectedInmate.escapedTime}</span>
                                 </div>
                                
-                                {/* <div className="profile-item">
-                                    <strong className="profile-label">Physical Description (Height, Weight, Distinguishing features)</strong>
-                                    <span className="profile-value">:  {selectedInmate.physicalDescription}</span>
-                                </div>
-                                <div className="profile-item">
-                                    <strong className="profile-label">Clothing description at the time of escape (if known)</strong>
-                                    <span className="profile-value">:  {selectedInmate.clothingDescription}</span>
-                                </div> */}
+        
                                 <div className="profile-item">
                                     <strong className="profile-label">Inmate Status</strong>
                                     <span className="profile-value">:  {selectedInmate.status}</span>
@@ -275,9 +268,8 @@ function WantedInmates() {
                     visible={isVisibleCurrentModal}
                     onCancel={() => { setIsVisibleCurrentModal(false) }}
                     footer={null}
-                    closeIcon={<span className="closeIcon" style={{ color: 'red' }}>X</span>}
                     width={450}
-                    style={{ marginTop: -50, marginBottom: 120 }}
+                    style={{ marginTop: 50, marginBottom: 30 }}
                 >
                     {selectedInmate && (
                         <WantedToCurrentInmate

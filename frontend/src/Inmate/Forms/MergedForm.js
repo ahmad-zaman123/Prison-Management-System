@@ -1,38 +1,31 @@
 import React, { useState } from 'react';
 import axios from "axios";
+// import { useNavigate } from 'react-router-dom';
 import { message, Progress } from 'antd';
 import AddCurrentAdmission from '../Forms/AddCurrentAdmission';
 import AddCurrentInmate from '../Forms/AddCurrentInmate';
 
-function MergedForm() {
+function MergedForm({ onClose,onAdd }) {
+
+    // const navigate = useNavigate();
+
     const [page, setPage] = useState(0);
     const [image, setImage] = useState("");
     const [formData, setFormData] = useState({
         image:"",
         fullname: "",
-        // initialname: "",
         birthday: "",
         gender: "",
-        // nic: "",
-        // address: "",
-        // contactnumber: "",
         emergencycontactname: "",
         emergencycontactnumber: "",
         marital: "",
-        // occupation: "",
-        // education: "",
-        // religion: "",
         inmatenumber:"",
         offense: "",
         sentence: "",
         admissionDate: "",
         releaseDate: "",
-        // years: "",
-        // months: "",
-        // days: "",
         cellNumber: "",
         medicalConditions: "",
-        // additionalNotes: "",
         realReleaseDate: "",
         releaseReason: "",
         releaseBy: "",
@@ -88,8 +81,10 @@ function MergedForm() {
                     }
                     await axios.post("http://localhost:3500/inmate/addinmates", formDataToSend);
                     message.success('New inmate added successfully.');
-
-                    window.location.href = '/current';
+                    if (onAdd) onAdd();
+                    // window.location.href = '/current';
+                    if (onClose) onClose();
+                    // navigate("/current");
                 } catch (error) {
                     // Handle errors
                     message.error('Failed to add the new inmate.');

@@ -76,50 +76,7 @@ function HealthcareDashboard() {
         }
     };
 
-    
-    // const fetchData = async () => {
-    //     try {
-    //         setLoading(true);
-    //         setError(null);
 
-    //         // Fetch count of current appointments for the last 7 days
-    //         const currentAppointmentsResponse = await axios.get("http://localhost:3500/appointment/findall");
-    //         const currentAppointments = currentAppointmentsResponse.data.filter(appointment => {
-    //             return isWithinLast7Days(appointment.appointmentDate);
-    //         });
-
-    //         const currentAppointmentsCount = currentAppointments.length;
-    //         const allCurrentAppointmentsCount = currentAppointmentsResponse.data.length;
-    //         setcurrentAppointmentsCount(allCurrentAppointmentsCount)
-
-    //         // Fetch count of approved appointments for the last 7 days
-    //         const approvedAppointmentsResponse = await axios.get("http://localhost:3500/appointment/approved");
-    //         const approvedAppointments = approvedAppointmentsResponse.data.filter(appointment => {
-    //             return isWithinLast7Days(appointment.appointmentDate);
-    //         });
-
-    //         const approvedAppointmentsCount = approvedAppointments.length;
-    //         const allApprovedAppointmentsCount = approvedAppointmentsResponse.data.length;
-    //         setapprovedAppointmentsCount(allApprovedAppointmentsCount)
-
-    //         // Fetch count of health records
-    //         const healthRecordsResponse = await axios.get("http://localhost:3500/healthrecord/healthrecords");
-    //         const healthRecordsCount = healthRecordsResponse.data.length;
-
-    //         setAppointmentsData({
-    //             current: currentAppointmentsCount,
-    //             approved: approvedAppointmentsCount
-    //         });
-
-    //         setHealthRecordsCount(healthRecordsCount);
-
-    //         setLoading(false);
-    //     } catch (error) {
-    //         console.error('Error fetching data:', error);
-    //         setError('Error fetching data. Please try again later.');
-    //         setLoading(false);
-    //     }
-    // };
 
     const isWithinLast7Days = (dateString) => {
         const appointmentDate = new Date(dateString);
@@ -128,30 +85,6 @@ function HealthcareDashboard() {
         const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
         return differenceInDays <= 7 && differenceInDays >= 0;
     };
-
-    // const isWithinLast7Days = (dateString) => {
-    //     console.log("🔍 Checking dateString:", dateString);
-        
-    //     if (!dateString) return false;
-    
-    //     const appointmentDate = new Date(dateString);
-    //     if (isNaN(appointmentDate.getTime())) {
-    //         console.log("❌ Invalid Date:", dateString);
-    //         return false;
-    //     }
-    
-    //     const today = new Date();
-        
-    //     // Convert both dates to UTC midnight
-    //     const utcAppointment = Date.UTC(appointmentDate.getUTCFullYear(), appointmentDate.getUTCMonth(), appointmentDate.getUTCDate());
-    //     const utcToday = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
-    
-    //     const differenceInDays = (utcToday - utcAppointment) / (1000 * 3600 * 24);
-    
-    //     console.log(`📆 Date: ${dateString}, Difference in Days (UTC): ${differenceInDays}`);
-    
-    //     return differenceInDays <= 7 && differenceInDays >= 0;
-    // };
     
 
     console.log("Rendering Pie Chart with Data:", appointmentsData);
@@ -187,9 +120,9 @@ function HealthcareDashboard() {
                 {error && <p>{error}</p>}
                 {appointmentsData && appointmentsData.current !== undefined && appointmentsData.approved !== undefined && (
                     <div className="pieChart">
-                        <h4 className="pieChartTitle">Appointments Distribution</h4>
+                        <h4 className="pieChartTitle">Appointments Distribution </h4>
                         <Pie
-                            style={{ height: '300px' }}
+                            style={{ height: '400px',marginLeft:'50px',marginTop:'20px' }}
                             data={{
                                 labels: ['Current Appointments', 'Approved Appointments'],
                                 datasets: [{

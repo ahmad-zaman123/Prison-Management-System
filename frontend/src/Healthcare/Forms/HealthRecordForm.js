@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+// import { useNavigate } from 'react-router-dom';
 import './healthRecordForm.css';
 
-const HealthRecordForm = ({ inmateName }) => {
+const HealthRecordForm = ({ inmateName, onSuccess }) => {
+
+    // const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         InmateName: inmateName,
         dateOfBirth: '',
@@ -77,7 +81,8 @@ const validateDiagnosis = (value) => {
         try {
             const response = await axios.post('http://localhost:3500/healthrecord/addhealthrecords', formData);
             console.log('Success:', response.data);
-            window.location.href = '/healthRecords';
+            // window.location.href = '/healthRecords';
+            // navigate("/healthRecords");
             // Reset form data
             setFormData({
                 InmateName: '',
@@ -88,7 +93,7 @@ const validateDiagnosis = (value) => {
             });
             setErrors({});
             // Show success message
-            alert('Health record added successfully');
+            if (onSuccess) onSuccess();
             // Set submitted to true to cancel the form
             setSubmitted(true);
         } catch (error) {

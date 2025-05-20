@@ -118,7 +118,7 @@ function Dashboard() {
       <div className="dashboard-container">
         <div className="chart-card-gender">
           <h3 className="chart-card-gender-title">Current Inmates Overview</h3>
-          <div className="pie-chart"><Pie style={{ height: '340px', marginLeft: '20px' }} data={genderData} /></div>
+          <div className="pie-chart"><Pie style={{ height: '370px', marginLeft: '20px' }} data={genderData} /></div>
         </div>
 
         <div className="chart-card-status">

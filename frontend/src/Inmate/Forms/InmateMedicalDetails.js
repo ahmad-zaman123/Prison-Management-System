@@ -71,9 +71,8 @@ function InmateMedicalDetails({ inmateName, inmateNumber, selectedInmate }) {
                 visible={isVisibleHealthcareAppointmentModal}
                 onCancel={() => setIsVisibleHealthcareAppointmentModal(false)}
                 footer={null}
-                closeIcon={<span className="closeIcon" style={{ color: 'red' }}>X</span>}
-                width={600}
-                style={{ marginTop: -50, marginBottom: 120 }}
+                width={500}
+                style={{ marginTop: -70, marginBottom: 120 }}
             >
                 <AddAppointmentForm
                     inmateName={inmateName}

@@ -19,16 +19,17 @@ const DoctorList = () => {
     const [isVisibleDeleteDoctorModal, setIsVisibleDeleteDoctorModal] = useState(false);
 
 
+
+    const fetchDoctors = async () => {
+        try {
+            const response = await axios.get('http://localhost:3500/Doctros');
+            setDoctors(response.data);
+            setFilteredDoctors(response.data);
+        } catch (error) {
+            console.error('Error fetching Doctors:', error);
+        }
+    };
     useEffect(() => {
-        const fetchDoctors = async () => {
-            try {
-                const response = await axios.get('http://localhost:3500/Doctros');
-                setDoctors(response.data);
-                setFilteredDoctors(response.data);
-            } catch (error) {
-                console.error('Error fetching Doctors:', error);
-            }
-        };
         fetchDoctors();
     }, []);
 
@@ -191,7 +192,10 @@ const DoctorList = () => {
                         footer={null}
                         width={600}
                     >
-                        <DoctorForm />
+                        <DoctorForm onAdd={() => {
+                            fetchDoctors();        // Refresh the list
+                            setAddDoctorModalVisible(false);  // Close the modal
+                        }} />
                     </Modal>
                     <Modal
                         visible={isVisibleDoctorProfileModal}
@@ -228,7 +232,7 @@ const DoctorList = () => {
                                         <div className="text1">Medical License Number :</div>
                                         <div className="text">{selectedDoctor.MedicalLicenseNumber}</div>
                                     </div>
-                                    
+
                                 </div>
 
 

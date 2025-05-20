@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import "./DoctorForm.css"
 import axios from 'axios';
-function DoctorForm() {
+function DoctorForm({ onAdd }) {
     const [formData, setFormData] = useState({
         FirstName: '',
         LastName: '',
@@ -13,6 +13,8 @@ function DoctorForm() {
         MedicalLicenseNumber: '',
         StartDate: '',
     });
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     const handleChange = (e) => {
         setFormData({
@@ -25,7 +27,8 @@ function DoctorForm() {
         try {
             await axios.post("http://localhost:3500/Doctros", formData);
             console.log("Form submitted successfully!");
-            
+            setIsSubmitted(true);
+            if (onAdd) onAdd();
         } catch (error) {
             console.error("Error:", error);}
             
@@ -34,7 +37,7 @@ function DoctorForm() {
 
 
     return (
-        <>
+        <div>
             <h2 style={{ color: '#3C78AA', fontWeight: 'bold', textAlign: 'center', marginBottom: '15px' }}>Doctor Form</h2>
             
 
@@ -45,10 +48,10 @@ function DoctorForm() {
           <input type="text" className='addjailorinputs' name="FirstName" value={formData.FirstName} onChange={handleChange} required />
         </div>
         <div>
-          {/* {errors.FirstNameError && <span className="error">{errors.FirstNameError}</span>} */}
+          
           <label className='Addjailor-lable'>Last Name: </label> <br />
           <input type="text" className='addjailorinputs' name="LastName" value={formData.LastName} onChange={handleChange} required /><br />
-          {/* {errors.LastNameError && <span className="error">{errors.LastNameError}</span>} */}
+         
         </div>
       </div>
 
@@ -56,11 +59,10 @@ function DoctorForm() {
         <div>
           <label className='Addjailor-lable'>Date of Birth: </label> <br />
           <input type="date" className='addjailorinputs' name="DateofBirth" value={formData.DateofBirth} onChange={handleChange} required /><br />
-          {/* {errors.DateOfBirthError && <span className="error">{errors.DateOfBirthError}</span>} */}
+          
         </div>
         <div>
-          {/* <label className='Addjailor-lable'>Contact Number: </label> <br />
-          <input type="text" className='addjailorinputs' name="ContactNumber" value={formData.ContactNumber} onChange={handleChange} required /><br /> */}
+          
           <label  className='Doctor-form-label'>Contact Number:</label>
                         <input
                             type="tel"
@@ -71,7 +73,7 @@ function DoctorForm() {
                             className="addjailorinputs"
                             required
                         />
-          {/* {errors.ContactNumberError && <span className="error">{errors.ContactNumberError}</span>} */}
+          
         </div>
       </div>
 
@@ -84,9 +86,7 @@ function DoctorForm() {
           <input type="radio" id="female" name="Gender" value="female" onChange={handleChange} checked={formData.Gender === "female"} required />
           <label htmlFor="female" className='radio-lable'>Female</label>
 
-          {/* <label className='Addjailor-lable'>Emergency Contact Number: </label> <br /> */}
-          {/* <input type="text" className='addjailorinputs' name="EmergencyContactNumber" value={formData.EmergencyContactNumber} onChange={handleChange} required /><br /> */}
-          {/* {errors.EmergencyContactNumberError && <span className="error">{errors.EmergencyContactNumberError}</span>} */}
+        
         </div>
         <div>
           <label className='Addjailor-lable'>Specialty:</label> <br />
@@ -132,7 +132,7 @@ function DoctorForm() {
       <button  onClick={handleSubmit} className="Doctor-submit-button" >Submit</button>
     </div>
             
-        </>
+        </div>
     );
 }
 

@@ -28,7 +28,7 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
 
     const preventEmergencyContactNumber = (_, value) => {
         // Strip out any symbols and update the form data
-        const strippedValue = value.replace(/[^\d+\s]/g,'');
+        const strippedValue = value.replace(/[^0-9\s]/g, '');
         setFormData(prevState => ({ ...prevState, emergencycontactnumber: strippedValue }));
         return Promise.resolve();
     };
@@ -176,7 +176,7 @@ function AddCurrentInmate({ formData, setFormData, setImage }) {
                         { validator: preventEmergencyContactNumber },
                     ]}
                 >
-                    <div className="InputName"><Input className="InputField2" placeholder="+92XXXXXXXXX" value={formData.emergencycontactnumber} onChange={(e) => { setFormData({ ...formData, emergencycontactnumber: e.target.value }); }}/></div>
+                    <div className="InputName"><Input className="InputField2" value={formData.emergencycontactnumber} onChange={(e) => { setFormData({ ...formData, emergencycontactnumber: e.target.value }); }}/></div>
                 </Form.Item>
 
                 </div>

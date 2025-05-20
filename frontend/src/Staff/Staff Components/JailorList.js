@@ -19,7 +19,7 @@ const JailorList = () => {
     const [isVisibleJailorPDFModal, setIsVisibleJailorPDFModal] = useState(false);
     const [isVisibleDeleteJailorModal, setIsVisibleDeleteJailorModal] = useState(false);
 
-    useEffect(() => {
+    
         const fetchJailors = async () => {
             try {
                 const response = await axios.get('http://localhost:3500/Jailors');
@@ -29,6 +29,7 @@ const JailorList = () => {
                 console.error('Error fetching jailors:', error);
             }
         };
+        useEffect(() => {
         fetchJailors();
     }, []);
 
@@ -83,7 +84,7 @@ const JailorList = () => {
 
     const updateJailor = async (id, updatedJailorData) => {
         try {
-            await axios.put(`http://localhost:3500/Jailors/${id}, updatedJailorData`);
+            await axios.put(`http://localhost:3500/Jailors/${id}`, updatedJailorData);
             const updatedJailors = jailors.map(jailor => {
                 if (jailor._id === id) {
                     return { ...jailor, ...updatedJailorData };
@@ -207,7 +208,7 @@ const JailorList = () => {
                         footer={null}
                         width={600}
                     >
-                        <AddJailorForm />
+                        <AddJailorForm onAdd={fetchJailors} />
                     </Modal>
                     <Modal
                         visible={isVisibleJailorProfileModal}

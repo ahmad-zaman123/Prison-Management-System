@@ -115,20 +115,23 @@ const AllVisitors = () => {
                 <table className="v-custom-table">
                     <thead>
                         <tr className="leading-normal text-gray-800 uppercase bg-gray-200 text-md">
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Date of Birth</th>
+                            <th>Full Name</th>                    
                             <th>Gender</th>
+                            <th>Inmate No</th>
+                            <th>Inmate Name</th>
+                            <th>Date of Visit</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody className="text-sm font-normal text-gray-900">
                         {filteredVisitors.map((visitor) => (
                             <tr key={visitor._id} >
-                                <td onClick={() => handleView(visitor._id)}>{visitor.firstName}</td>
-                                <td onClick={() => handleView(visitor._id)}>{visitor.lastName}</td>
-                                <td onClick={() => handleView(visitor._id)}>{new Date(visitor.dateOfBirth).toLocaleDateString()}</td>
+                                <td onClick={() => handleView(visitor._id)}>{visitor.firstName} {visitor.lastName}</td>
                                 <td onClick={() => handleView(visitor._id)}>{visitor.gender}</td>
+                                <td onClick={() => handleView(visitor._id)}>{visitor.inmateNo}</td>
+                                <td onClick={() => handleView(visitor._id)}>{visitor.inmateName}</td>
+                                <td >{new Date(visitor.dateOfVisit).toLocaleDateString()}</td>
+                               
                                 
                                 <td>
                                     
